@@ -5,12 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>top.yangcc</groupId>
-    <artifactId>es</artifactId>
+    <artifactId>code</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>elasticsearch-facade</module>
         <module>elasticsearch-core</module>
+        <module>common</module>
+        <module>cache</module>
     </modules>
 
     <properties>
