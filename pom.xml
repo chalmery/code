@@ -12,7 +12,7 @@
         <module>elasticsearch-facade</module>
         <module>elasticsearch-core</module>
         <module>common</module>
-        <module>cache</module>
+        <module>metadata</module>
         <module>process-engine</module>
     </modules>
 
