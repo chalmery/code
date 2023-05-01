@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.yangcc.common.result.SimpleResult;
 
 @SpringBootApplication
 
@@ -18,7 +19,7 @@ public class StartApplication {
 
 
     @RequestMapping("/start")
-    public String start(Integer age) {
+    public SimpleResult<String> start(Integer age) {
         log.info("[StartApplication][start][{}]",age);
         String json = """
                 {
@@ -28,7 +29,7 @@ public class StartApplication {
                 """;
         String format = String.format(json, age);
         log.info("[StartApplication][end][{}]",format);
-        return format;
+        return SimpleResult.buildSuccess(format);
     }
 
 
