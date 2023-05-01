@@ -9,6 +9,7 @@ import java.util.*;
  * a&&b -> ab&
  * (1||2)&&3 -> 12|3&
  */
+@SuppressWarnings("unused")
 public class ExpressUtils {
 
 

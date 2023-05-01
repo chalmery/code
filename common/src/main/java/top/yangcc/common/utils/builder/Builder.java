@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+
+@SuppressWarnings("unused")
 public class Builder<T> {
 
     private final Supplier<T> instantiate;

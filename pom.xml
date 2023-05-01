@@ -17,8 +17,8 @@
         <module>elasticsearch-facade</module>
         <module>elasticsearch-core</module>
         <module>common</module>
-        <module>metadata</module>
         <module>process-engine</module>
+        <module>start</module>
     </modules>
 
     <properties>

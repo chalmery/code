@@ -57,6 +57,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+@SuppressWarnings("unused")
 public class ElasticSearchFacadeImpl implements ElasticSearchFacade {
 
     public static final String ES_INDEX_TIME = "es_index_time";

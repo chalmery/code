@@ -1,6 +1,7 @@
-package top.yangcc.common.constant;
+package top.yangcc.common.enums;
 
-public enum AppConstant {
+
+public enum AppEnum {
     AND("&"),
 
     DOUBLE_AND("&&"),
@@ -19,10 +20,9 @@ public enum AppConstant {
 
     ;
 
-
     private final String code;
 
-    AppConstant(String code) {
+    AppEnum(String code) {
         this.code = code;
     }
 

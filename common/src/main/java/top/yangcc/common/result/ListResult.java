@@ -1,10 +1,13 @@
 package top.yangcc.common.result;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
+@SuppressWarnings("unused")
 public class ListResult<T> extends BaseResult {
 
     private List<T> data;
