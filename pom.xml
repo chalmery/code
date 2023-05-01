@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
+        <version>3.0.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>top.yangcc</groupId>
@@ -17,7 +17,6 @@
         <module>elasticsearch-facade</module>
         <module>elasticsearch-core</module>
         <module>common</module>
-        <module>process-engine</module>
         <module>start</module>
     </modules>
 
@@ -26,7 +25,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.22</lombok.version>
-        <spring.version>2.6.4</spring.version>
+        <spring.version>3.0.6</spring.version>
         <elasticsearch.version>6.7.2</elasticsearch.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
@@ -78,7 +77,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
