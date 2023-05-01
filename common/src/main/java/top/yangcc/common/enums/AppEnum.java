@@ -1,6 +1,8 @@
 package top.yangcc.common.enums;
 
 
+
+@SuppressWarnings("unused")
 public enum AppEnum {
     AND("&"),
 

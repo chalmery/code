@@ -6,6 +6,7 @@ import org.slf4j.MDC;
 import java.io.Serializable;
 
 @Data
+@SuppressWarnings("unused")
 public class BaseResult implements Serializable {
 
     private static final String TRACE_ID = "traceId";
