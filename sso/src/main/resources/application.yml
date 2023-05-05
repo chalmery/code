@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: sso
+  datasource:
+    name: mysql
+    type: com.mysql.cj.jdbc.MysqlConnectionPoolDataSource
+    url: jdbc:mysql://localhost:3306/arch_data_sso
+    username: root
+    password: root
+server:
+  port: 8001
+
+mybatis-plus:
+  mapper-locations: classpath*:/mybatis/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
