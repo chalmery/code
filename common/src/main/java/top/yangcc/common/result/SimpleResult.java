@@ -21,6 +21,14 @@ public class SimpleResult<T> extends BaseResult {
         return result;
     }
 
+    public static <T> SimpleResult<T> buildSuccess(){
+        SimpleResult<T> result = new SimpleResult<>();
+        result.setCode(ResultCode.SUCCESS.getCode());
+        result.setMessage(ResultCode.SUCCESS.getMessage());
+        result.setSuccess(true);
+        return result;
+    }
+
     public static <T> SimpleResult<T> buildError(){
         SimpleResult<T> result = new SimpleResult<>();
         result.setCode(ResultCode.ERROR.getCode());

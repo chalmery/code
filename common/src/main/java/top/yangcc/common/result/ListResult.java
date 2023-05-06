@@ -23,6 +23,14 @@ public class ListResult<T> extends BaseResult {
         return result;
     }
 
+    public static <T> ListResult<T> buildSuccess(){
+        ListResult<T> result = new ListResult<>();
+        result.setCode(ResultCode.SUCCESS.getCode());
+        result.setMessage(ResultCode.SUCCESS.getMessage());
+        result.setSuccess(true);
+        return result;
+    }
+
     public static <T> ListResult<T> buildSuccess(List<T> data,Long count){
         ListResult<T> result = new ListResult<>();
         result.setCode(ResultCode.SUCCESS.getCode());

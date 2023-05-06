@@ -8,8 +8,8 @@ import java.util.Date;
 
 
 @Data
-@TableName("sso_user")
-public class UserDO implements Serializable {
+@TableName("sso_emp")
+public class EmpDO implements Serializable {
 
     private Long id;
 
