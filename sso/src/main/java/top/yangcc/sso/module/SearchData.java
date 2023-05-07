@@ -14,7 +14,7 @@ import java.util.List;
 public class SearchData<T> {
 
     @Schema(description = "分页信息")
-    private Page page;
+    private PageInfo pageInfo;
 
     @Schema(description = "当前条件下总条数")
     private Long count;

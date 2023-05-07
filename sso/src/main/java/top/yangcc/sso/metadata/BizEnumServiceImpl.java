@@ -1,6 +1,7 @@
 package top.yangcc.sso.metadata;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import top.yangcc.sso.dao.api.BizEnumMapper;
 import top.yangcc.sso.dao.dataobject.BizEnumDO;
+import top.yangcc.sso.enums.ArchiveEnum;
 import top.yangcc.sso.metadata.converter.MetaConverter;
 import top.yangcc.sso.metadata.entity.BizEnumDTO;
 import top.yangcc.sso.metadata.entity.MeteDataTypeEnum;
@@ -27,7 +29,10 @@ public class BizEnumServiceImpl extends MetaDataServiceImpl<BizEnumDTO> {
     @PostConstruct
     @Override
     void init() {
-        List<BizEnumDO> bizEnumDOS = bizEnumMapper.selectList(null);
+
+        LambdaQueryWrapper<BizEnumDO> wrapper = new LambdaQueryWrapper<>(BizEnumDO.class);
+        wrapper.eq(BizEnumDO::getArchive, ArchiveEnum.NO.getCode());
+        List<BizEnumDO> bizEnumDOS = bizEnumMapper.selectList(wrapper);
         if (CollectionUtils.isEmpty(bizEnumDOS)){
             return;
         }

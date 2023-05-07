@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Page implements Serializable {
+public class PageInfo implements Serializable {
 
     private Integer page;
 
