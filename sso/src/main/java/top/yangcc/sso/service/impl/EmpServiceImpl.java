@@ -1,19 +1,23 @@
 package top.yangcc.sso.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import top.yangcc.common.result.SimpleResult;
-import top.yangcc.common.result.module.Page;
-import top.yangcc.common.result.module.SearchData;
 import top.yangcc.sso.dao.api.EmpMapper;
 import top.yangcc.sso.dao.dataobject.EmpDO;
+import top.yangcc.sso.dto.EmpDTO;
+import top.yangcc.sso.dto.EmpListDTO;
+import top.yangcc.sso.enums.ArchiveEnum;
+import top.yangcc.sso.module.Page;
+import top.yangcc.sso.module.SearchData;
 import top.yangcc.sso.service.api.EmpService;
 import top.yangcc.sso.service.converter.EmpConverter;
-import top.yangcc.sso.service.dto.EmpDTO;
-import top.yangcc.sso.service.dto.EmpListDTO;
 import top.yangcc.sso.service.param.EmpListParam;
 
 import java.util.List;
+import java.util.Objects;
 
 
 @Service
@@ -29,9 +33,24 @@ public class EmpServiceImpl implements EmpService {
 
         SimpleResult<SearchData<EmpListDTO>> result = SimpleResult.buildSuccess();
 
-        List<EmpDO> userList = empMapper.selectList(null);
+        LambdaQueryWrapper<EmpDO> wrapper = new LambdaQueryWrapper<>(EmpDO.class);
 
-        Long count = empMapper.selectCount(null);
+        wrapper.eq(EmpDO::getAvatar, ArchiveEnum.NO.getCode());
+
+        if (Objects.nonNull(param.getId())){
+            wrapper.eq(EmpDO::getId,param.getId());
+        }
+        if (StringUtils.isNoneBlank(param.getName())){
+            wrapper.like(EmpDO::getName,param.getName());
+        }
+        if (StringUtils.isNoneBlank(param.getNickname())){
+            wrapper.like(EmpDO::getNickname,param.getName());
+        }
+
+
+        List<EmpDO> userList = empMapper.selectList(wrapper);
+
+        Long count = empMapper.selectCount(wrapper);
 
         SearchData<EmpListDTO> searchData = new SearchData<>();
         searchData.setPage(new Page(param.getPage(), param.getLimit()));

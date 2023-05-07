@@ -1,4 +1,4 @@
-package top.yangcc.sso.service.dto.base;
+package top.yangcc.sso.dto.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

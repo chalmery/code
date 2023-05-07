@@ -1,4 +1,4 @@
-package top.yangcc.common.result.module;
+package top.yangcc.sso.module;
 
 
 import lombok.AllArgsConstructor;

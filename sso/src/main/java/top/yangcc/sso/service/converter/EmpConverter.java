@@ -4,11 +4,11 @@ package top.yangcc.sso.service.converter;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 import top.yangcc.sso.dao.dataobject.EmpDO;
+import top.yangcc.sso.dto.EmpDTO;
+import top.yangcc.sso.dto.EmpListDTO;
+import top.yangcc.sso.dto.base.FieldPair;
 import top.yangcc.sso.enums.EmpStatus;
 import top.yangcc.sso.enums.EmpType;
-import top.yangcc.sso.service.dto.EmpDTO;
-import top.yangcc.sso.service.dto.EmpListDTO;
-import top.yangcc.sso.service.dto.base.FieldPair;
 
 import java.util.List;
 

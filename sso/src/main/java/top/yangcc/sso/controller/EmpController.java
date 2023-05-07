@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.yangcc.common.result.SimpleResult;
-import top.yangcc.common.result.module.SearchData;
+import top.yangcc.sso.dto.EmpDTO;
+import top.yangcc.sso.dto.EmpListDTO;
+import top.yangcc.sso.module.SearchData;
 import top.yangcc.sso.service.api.EmpService;
-import top.yangcc.sso.service.dto.EmpDTO;
-import top.yangcc.sso.service.dto.EmpListDTO;
 import top.yangcc.sso.service.param.EmpListParam;
 
 import java.util.Objects;
@@ -41,5 +41,15 @@ public class EmpController {
         return empService.detail(id);
     }
 
+
+
+    @Operation(summary = "员工信息详情")
+    @GetMapping("/add")
+    public SimpleResult<EmpDTO> add(Long id) {
+        if (Objects.isNull(id)) {
+            return SimpleResult.buildSuccess();
+        }
+        return empService.detail(id);
+    }
 
 }

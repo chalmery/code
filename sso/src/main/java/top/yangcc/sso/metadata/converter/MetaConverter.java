@@ -5,9 +5,9 @@ import com.alibaba.fastjson.JSON;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 import top.yangcc.sso.dao.dataobject.BizEnumDO;
+import top.yangcc.sso.dto.base.FieldPair;
 import top.yangcc.sso.metadata.entity.BizEnumDTO;
 import top.yangcc.sso.service.converter.BaseConverter;
-import top.yangcc.sso.service.dto.base.FieldPair;
 
 import java.util.List;
 
