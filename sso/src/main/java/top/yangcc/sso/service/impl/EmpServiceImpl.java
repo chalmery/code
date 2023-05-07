@@ -9,6 +9,7 @@ import top.yangcc.sso.dao.api.EmpMapper;
 import top.yangcc.sso.dao.dataobject.EmpDO;
 import top.yangcc.sso.service.api.EmpService;
 import top.yangcc.sso.service.converter.EmpConverter;
+import top.yangcc.sso.service.dto.EmpDTO;
 import top.yangcc.sso.service.dto.EmpListDTO;
 import top.yangcc.sso.service.param.EmpListParam;
 
@@ -39,4 +40,15 @@ public class EmpServiceImpl implements EmpService {
         result.setData(searchData);
         return result;
     }
+
+    @Override
+    public SimpleResult<EmpDTO> detail(Long id) {
+        SimpleResult<EmpDTO> result = SimpleResult.buildSuccess();
+        EmpDO empDO = empMapper.selectById(id);
+        result.setData(empConverter.toDTO(empDO));
+        return result;
+    }
+
+
+
 }

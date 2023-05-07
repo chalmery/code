@@ -20,8 +20,6 @@ mybatis-plus:
 
 # springdoc-openapi项目配置
 springdoc:
-  api-docs:
-    path: /v3/api-docs
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
