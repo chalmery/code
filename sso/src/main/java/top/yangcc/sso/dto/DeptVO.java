@@ -15,17 +15,17 @@ public class DeptVO implements Serializable {
 
     @Schema(description = "部门Code")
     @NotNull(message = "不能为空")
-    private Integer deptCode;
+    private String deptCode;
 
     @Schema(description = "部门Name")
     @NotNull(message = "不能为空")
-    private String depName;
+    private String deptName;
 
     @Schema(description = "部门EnName")
     @NotNull(message = "不能为空")
     private String deptEnName;
 
     @Schema(description = "父级部门Code")
-    private Integer parentCode;
+    private String parentCode;
 
 }

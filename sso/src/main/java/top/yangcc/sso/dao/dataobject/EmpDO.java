@@ -1,5 +1,7 @@
 package top.yangcc.sso.dao.dataobject;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -11,6 +13,8 @@ import java.util.Date;
 @TableName("sso_emp")
 public class EmpDO implements Serializable {
 
+
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String domain;

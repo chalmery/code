@@ -46,8 +46,8 @@ public class DeptServiceImpl implements DeptService {
         if (StringUtils.isNoneBlank(param.getDeptCode())){
             wrapper.like(DeptDO::getDeptCode,param.getDeptCode());
         }
-        if (StringUtils.isNoneBlank(param.getDepName())){
-            wrapper.like(DeptDO::getDepName,param.getDepName());
+        if (StringUtils.isNoneBlank(param.getDeptName())){
+            wrapper.like(DeptDO::getDeptName,param.getDeptName());
         }
         if (StringUtils.isNoneBlank(param.getDeptEnName())){
             wrapper.like(DeptDO::getDeptEnName,param.getDeptEnName());

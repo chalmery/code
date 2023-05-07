@@ -18,7 +18,7 @@ public class DeptListParam extends PageRequest {
     private String deptCode;
 
     @Schema(description = "部门Name模糊搜索")
-    private String depName;
+    private String deptName;
 
     @Schema(description = "部门EnName模糊搜索")
     private String deptEnName;

@@ -22,7 +22,7 @@ public class DeptDTO implements Serializable {
     private Integer deptCode;
 
     @Schema(description = "部门Name")
-    private String depName;
+    private String deptName;
 
     @Schema(description = "部门EnName")
     private String deptEnName;

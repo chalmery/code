@@ -1,5 +1,7 @@
 package top.yangcc.sso.dao.dataobject;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -11,6 +13,8 @@ import java.util.Date;
 @TableName("sso_dept")
 public class DeptDO implements Serializable {
 
+
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     private Date gmtCreate;
@@ -19,12 +23,12 @@ public class DeptDO implements Serializable {
 
     private Boolean archive;
 
-    private Integer deptCode;
+    private String deptCode;
 
-    private String depName;
+    private String deptName;
 
     private String deptEnName;
 
-    private Integer parentCode;
+    private String parentCode;
 
 }
