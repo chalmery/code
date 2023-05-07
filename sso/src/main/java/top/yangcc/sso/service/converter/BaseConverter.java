@@ -10,10 +10,10 @@ import java.util.Objects;
 @Mapper
 public interface BaseConverter {
 
-    default FieldPair parseEnum(CodeDescEnum descEnum){
-        if (Objects.isNull(descEnum)){
+    default FieldPair parseEnum(CodeDescEnum descEnum) {
+        if (Objects.isNull(descEnum)) {
             return null;
         }
-        return new FieldPair(descEnum.getDesc(),descEnum.getCode());
+        return new FieldPair(descEnum.getDesc(), descEnum.getCode());
     }
 }
