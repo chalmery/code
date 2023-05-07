@@ -35,7 +35,7 @@ public class EmpController {
     @Operation(summary = "员工信息详情")
     @GetMapping("/detail")
     public SimpleResult<EmpDTO> detail(Long id) {
-        if (Objects.isNull(id)){
+        if (Objects.isNull(id)) {
             return SimpleResult.buildSuccess();
         }
         return empService.detail(id);

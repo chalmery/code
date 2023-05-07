@@ -21,7 +21,11 @@ public class BizEnumController {
     @Qualifier("BizEnumService")
     private MetaDataService<BizEnumDTO> metaDataService;
 
-    @Operation(summary = "获取单个枚举")
+    @Operation(summary = "获取单个枚举",
+            description = """
+                    员工类型：empType   </br>
+                    员工状态：empStatus </br>
+                    """)
     @GetMapping("/get")
     public SimpleResult<BizEnumDTO> get(String code) {
         SimpleResult<BizEnumDTO> result = SimpleResult.buildSuccess();
