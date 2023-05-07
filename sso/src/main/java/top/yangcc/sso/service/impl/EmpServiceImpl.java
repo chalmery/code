@@ -2,6 +2,7 @@ package top.yangcc.sso.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import top.yangcc.common.result.SimpleResult;
@@ -23,6 +24,7 @@ import java.util.Objects;
 
 
 @Service
+@Slf4j
 public class EmpServiceImpl implements EmpService {
 
     @Resource
@@ -73,6 +75,7 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public SimpleResult<Boolean> add(EmpVO empVO) {
         EmpDO empDO = empConverter.toDO(empVO);
+        log.info("[EmpServiceImpl][add][start][{}]",empDO);
         int count;
         if (Objects.nonNull(empVO.getId())){
             count = empMapper.updateById(empDO);
