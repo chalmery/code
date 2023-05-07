@@ -1,4 +1,4 @@
-package top.yangcc.sso.service.param;
+package top.yangcc.sso.dto.param;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

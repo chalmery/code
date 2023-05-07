@@ -11,12 +11,12 @@ import top.yangcc.sso.dao.dataobject.EmpDO;
 import top.yangcc.sso.dto.EmpDTO;
 import top.yangcc.sso.dto.EmpListDTO;
 import top.yangcc.sso.dto.EmpVO;
+import top.yangcc.sso.dto.param.EmpListParam;
 import top.yangcc.sso.enums.ArchiveEnum;
 import top.yangcc.sso.module.Page;
 import top.yangcc.sso.module.SearchData;
 import top.yangcc.sso.service.api.EmpService;
 import top.yangcc.sso.service.converter.EmpConverter;
-import top.yangcc.sso.service.param.EmpListParam;
 
 import java.util.Date;
 import java.util.List;
@@ -39,7 +39,7 @@ public class EmpServiceImpl implements EmpService {
 
         LambdaQueryWrapper<EmpDO> wrapper = new LambdaQueryWrapper<>(EmpDO.class);
 
-        wrapper.eq(EmpDO::getAvatar, ArchiveEnum.NO.getCode());
+        wrapper.eq(EmpDO::getArchive, ArchiveEnum.NO.getCode());
 
         if (Objects.nonNull(param.getId())){
             wrapper.eq(EmpDO::getId,param.getId());

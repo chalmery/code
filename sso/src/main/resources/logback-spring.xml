@@ -4,7 +4,7 @@
     <contextName>log</contextName>
 
     <!-- 日志的输出目录 -->
-    <property name="log.path" value="../logs" />
+    <property name="log.path" value="../code/logs" />
 
     <!--控制台日志格式：彩色日志-->
     <!-- magenta:洋红 -->
