@@ -1,6 +1,5 @@
 package top.yangcc.sso.advice;
 
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -25,12 +24,5 @@ public class CommonExceptionHandler {
         }
         String msg = sb.toString();
         return SimpleResult.buildError(msg);
-    }
-
-    @ExceptionHandler({ConstraintViolationException.class})
-    @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
-    public SimpleResult<Object> handleConstraintViolationException(ConstraintViolationException ex) {
-        return SimpleResult.buildError("参数校验失败"+ex.getMessage());
     }
 }
