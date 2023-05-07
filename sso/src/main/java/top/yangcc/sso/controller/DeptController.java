@@ -16,7 +16,7 @@ import top.yangcc.sso.service.api.DeptService;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/emp")
+@RequestMapping("/dept")
 @Tag(name = "部门域相关接口")
 public class DeptController {
 
