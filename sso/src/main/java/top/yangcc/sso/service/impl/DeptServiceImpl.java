@@ -39,6 +39,7 @@ public class DeptServiceImpl implements DeptService {
         LambdaQueryWrapper<DeptDO> wrapper = new LambdaQueryWrapper<>(DeptDO.class);
 
         wrapper.eq(DeptDO::getArchive, ArchiveEnum.NO.getCode());
+        wrapper.orderByDesc(DeptDO::getGmtCreate);
 
         if (Objects.nonNull(param.getId())){
             wrapper.eq(DeptDO::getId,param.getId());

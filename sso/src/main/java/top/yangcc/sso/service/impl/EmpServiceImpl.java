@@ -40,6 +40,7 @@ public class EmpServiceImpl implements EmpService {
         LambdaQueryWrapper<EmpDO> wrapper = new LambdaQueryWrapper<>(EmpDO.class);
 
         wrapper.eq(EmpDO::getArchive, ArchiveEnum.NO.getCode());
+        wrapper.orderByDesc(EmpDO::getGmtCreate);
 
         if (Objects.nonNull(param.getId())){
             wrapper.eq(EmpDO::getId,param.getId());
