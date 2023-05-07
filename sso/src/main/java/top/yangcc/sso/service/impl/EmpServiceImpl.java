@@ -9,6 +9,7 @@ import top.yangcc.sso.dao.api.EmpMapper;
 import top.yangcc.sso.dao.dataobject.EmpDO;
 import top.yangcc.sso.dto.EmpDTO;
 import top.yangcc.sso.dto.EmpListDTO;
+import top.yangcc.sso.dto.EmpVO;
 import top.yangcc.sso.enums.ArchiveEnum;
 import top.yangcc.sso.module.Page;
 import top.yangcc.sso.module.SearchData;
@@ -16,6 +17,7 @@ import top.yangcc.sso.service.api.EmpService;
 import top.yangcc.sso.service.converter.EmpConverter;
 import top.yangcc.sso.service.param.EmpListParam;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -68,6 +70,21 @@ public class EmpServiceImpl implements EmpService {
         return result;
     }
 
+    @Override
+    public SimpleResult<Boolean> add(EmpVO empVO) {
+        EmpDO empDO = empConverter.toDO(empVO);
+        int count;
+        if (Objects.nonNull(empVO.getId())){
+            count = empMapper.updateById(empDO);
+        }else {
+            empDO.setGmtCreate(new Date());
+            count = empMapper.insert(empDO);
+        }
+        if (count>0){
+            return SimpleResult.buildSuccess(Boolean.TRUE);
+        }
+        return SimpleResult.buildSuccess(Boolean.FALSE);
+    }
 
 
 }
