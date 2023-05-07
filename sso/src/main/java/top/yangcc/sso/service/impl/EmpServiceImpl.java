@@ -6,7 +6,7 @@ import top.yangcc.common.result.SimpleResult;
 import top.yangcc.common.result.module.Page;
 import top.yangcc.common.result.module.SearchData;
 import top.yangcc.sso.dao.api.EmpMapper;
-import top.yangcc.sso.dao.entity.EmpDO;
+import top.yangcc.sso.dao.dataobject.EmpDO;
 import top.yangcc.sso.service.api.EmpService;
 import top.yangcc.sso.service.converter.EmpConverter;
 import top.yangcc.sso.service.dto.EmpListDTO;

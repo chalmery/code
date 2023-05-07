@@ -5,6 +5,8 @@ target/
 
 ./logs/
 
+logs/**
+
 ### IntelliJ IDEA ###
 *.iws
 *.iml

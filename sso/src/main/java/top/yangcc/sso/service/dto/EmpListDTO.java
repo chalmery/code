@@ -1,6 +1,7 @@
 package top.yangcc.sso.service.dto;
 
 import lombok.Data;
+import top.yangcc.sso.service.dto.base.FieldPair;
 
 import java.io.Serializable;
 
@@ -25,4 +26,8 @@ public class EmpListDTO implements Serializable {
     private Long gmtModify;
 
     private String avatar;
+
+    private FieldPair status;
+
+    private FieldPair type;
 }

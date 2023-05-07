@@ -1,4 +1,4 @@
-package top.yangcc.sso.dao.entity;
+package top.yangcc.sso.dao.dataobject;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -32,5 +32,9 @@ public class EmpDO implements Serializable {
     private Date gmtModify;
 
     private String avatar;
+
+    private Integer status;
+
+    private Integer type;
 
 }

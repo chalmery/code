@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import top.yangcc.sso.SsoApplicationTests;
 import top.yangcc.sso.dao.api.EmpMapper;
-import top.yangcc.sso.dao.entity.EmpDO;
+import top.yangcc.sso.dao.dataobject.EmpDO;
 
 import java.util.List;
 
