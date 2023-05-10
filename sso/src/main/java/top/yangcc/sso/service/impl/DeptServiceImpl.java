@@ -24,7 +24,7 @@ import java.util.Objects;
 
 @Service
 @Slf4j
-public class DeptServiceImpl implements DeptService {d
+public class DeptServiceImpl implements DeptService {
 
     @Resource
     private DeptMapper deptMapper;
