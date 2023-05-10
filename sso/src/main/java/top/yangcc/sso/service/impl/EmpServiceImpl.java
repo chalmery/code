@@ -90,5 +90,15 @@ public class EmpServiceImpl implements EmpService {
         return SimpleResult.buildSuccess(Boolean.FALSE);
     }
 
+    @Override
+    public SimpleResult<Boolean> delete(EmpVO empVO) {
+        SimpleResult<Boolean> result = SimpleResult.buildSuccess(Boolean.TRUE);
+        Long id = empVO.getId();
+        EmpDO empDO = new EmpDO();
+        empDO.setId(id);
+        empMapper.updateById(empDO);
+        return result;
+    }
+
 
 }

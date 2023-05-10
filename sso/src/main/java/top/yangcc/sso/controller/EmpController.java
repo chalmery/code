@@ -52,4 +52,13 @@ public class EmpController {
         return empService.add(empVO);
     }
 
+    @Operation(summary = "删除员工")
+    @PostMapping("/delete")
+    public SimpleResult<Boolean> delete(@RequestBody EmpVO empVO) {
+        if (Objects.isNull(empVO) || Objects.isNull(empVO.getId())) {
+            return SimpleResult.buildSuccess();
+        }
+        return empService.delete(empVO);
+    }
+
 }

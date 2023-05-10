@@ -13,4 +13,6 @@ public interface DeptService {
     SimpleResult<DeptDTO> detail(Long id);
 
     SimpleResult<Boolean> add(DeptVO deptVO);
+
+    SimpleResult<Boolean> delete(DeptVO deptVO);
 }

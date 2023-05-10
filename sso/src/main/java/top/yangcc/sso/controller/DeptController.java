@@ -51,4 +51,13 @@ public class DeptController {
         return deptService.add(deptVO);
     }
 
+
+    @Operation(summary = "删除部门")
+    @PostMapping("/delete")
+    public SimpleResult<Boolean> delete(@RequestBody DeptVO deptVO) {
+        if (Objects.isNull(deptVO) || Objects.isNull(deptVO.getId())) {
+            return SimpleResult.buildSuccess();
+        }
+        return deptService.delete(deptVO);
+    }
 }

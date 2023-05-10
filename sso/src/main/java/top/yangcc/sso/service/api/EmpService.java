@@ -14,4 +14,6 @@ public interface EmpService {
     SimpleResult<EmpDTO> detail(Long id);
 
     SimpleResult<Boolean> add(EmpVO empVO);
+
+    SimpleResult<Boolean> delete(EmpVO empVO);
 }

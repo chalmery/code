@@ -24,7 +24,7 @@ import java.util.Objects;
 
 @Service
 @Slf4j
-public class DeptServiceImpl implements DeptService {
+public class DeptServiceImpl implements DeptService {d
 
     @Resource
     private DeptMapper deptMapper;
@@ -90,6 +90,16 @@ public class DeptServiceImpl implements DeptService {
             return SimpleResult.buildSuccess(Boolean.TRUE);
         }
         return SimpleResult.buildSuccess(Boolean.FALSE);
+    }
+
+    @Override
+    public SimpleResult<Boolean> delete(DeptVO deptVO) {
+        SimpleResult<Boolean> result = SimpleResult.buildSuccess(Boolean.TRUE);
+        Long id = deptVO.getId();
+        DeptDO deptDO = new DeptDO();
+        deptDO.setId(id);
+        deptMapper.updateById(deptDO);
+        return result;
     }
 
 
