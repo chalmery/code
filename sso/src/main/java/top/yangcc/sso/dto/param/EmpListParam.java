@@ -23,4 +23,8 @@ public class EmpListParam extends PageRequest {
     @Schema(description = "nickname模糊搜索")
     private String nickname;
 
+    private Long gmtCreateStart;
+
+
+
 }
