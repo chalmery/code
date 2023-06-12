@@ -96,6 +96,7 @@ public class EmpServiceImpl implements EmpService {
         Long id = empVO.getId();
         EmpDO empDO = new EmpDO();
         empDO.setId(id);
+        empDO.setArchive(Boolean.TRUE);
         empMapper.updateById(empDO);
         return result;
     }

@@ -18,6 +18,7 @@
         <module>elasticsearch-core</module>
         <module>common</module>
         <module>start</module>
+        <module>mini-spring-boot</module>
     </modules>
 
     <properties>

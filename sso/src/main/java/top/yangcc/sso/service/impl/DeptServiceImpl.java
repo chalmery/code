@@ -98,6 +98,7 @@ public class DeptServiceImpl implements DeptService {
         Long id = deptVO.getId();
         DeptDO deptDO = new DeptDO();
         deptDO.setId(id);
+        deptDO.setArchive(Boolean.TRUE);
         deptMapper.updateById(deptDO);
         return result;
     }

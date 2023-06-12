@@ -1,0 +1,3 @@
+2023-05-08 21:54:23 [INFO ] main [] Starting StartApplicationTests using Java 17.0.7 with PID 156927 (started by ycc in /home/ycc/code/java/code/start)
+2023-05-08 21:54:23 [INFO ] main [] The following 1 profile is active: "test"
+2023-05-08 21:54:23 [INFO ] main [] Started StartApplicationTests in 0.791 seconds (process running for 1.201)
