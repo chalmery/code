@@ -16,16 +16,10 @@ import java.util.List;
 public class ClassScanner {
 
 
-    public static void main(String[] args) throws IOException {
-        List<Class<?>> classes = scannerCLasses("top.yangcc");
-        System.out.println(classes);
-    }
-
-
     /**
      * 加载指定包名的类
      */
-    public static List<Class<?>> scannerCLasses(String packageName) throws IOException {
+    public static List<Class<?>> scannerCLasses(String packageName) throws IOException, ClassNotFoundException {
         String path = packageName.replace(".", "/");
         // 线程上下文类加载器默认是应用类加载器，即 ClassLoader.getSystemClassLoader();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -33,16 +27,12 @@ public class ClassScanner {
         //返回一个 Enumeration<URL> 。这个类是老版本的迭代器，因此可以转为list处理
         ArrayList<URL> list = Collections.list(classLoader.getResources(path));
 
+        List<Class<?>> classList = new ArrayList<>();
         for (URL url : list) {
-            System.out.println(url.getPath());
+            doScanPackageClasses(classList,packageName,url.getPath());
         }
-
-        return null;
+        return classList;
     }
-
-
-
-
 
     /**
      * 递归读取类文件
