@@ -4,7 +4,7 @@ import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
-import top.yangcc.web.servite.DispatcherServlet;
+import top.yangcc.web.servlet.DispatcherServlet;
 
 /**
  * 包装tomcat

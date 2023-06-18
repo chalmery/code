@@ -1,4 +1,4 @@
-package top.yangcc.web.servite;
+package top.yangcc.web.servlet;
 
 import jakarta.servlet.*;
 
