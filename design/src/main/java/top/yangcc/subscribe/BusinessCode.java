@@ -22,6 +22,6 @@ public class BusinessCode {
         //做完事情之后，发送通知
         AddEntity entity = new AddEntity("name","code","desc");
 
-        EventManager.notify(EventEnum.ADD,entity);
+        EventManager.publish(EventEnum.ADD,entity);
     }
 }
