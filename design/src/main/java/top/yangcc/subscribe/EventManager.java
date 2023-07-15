@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: ycc
  * @date: 2023/7/12 下午10:29
  */
-@SuppressWarnings("unused")
+@SuppressWarnings(value = { "unused", "unchecked" })
 public class EventManager {
 
     private static Map<EventEnum, List<EventListener<? extends EventData>>> eventListenerMap = new ConcurrentHashMap<>();
@@ -63,12 +63,9 @@ public class EventManager {
         if (CollectionUtils.isNotEmpty(eventListeners)) {
             for (EventListener<? extends EventData> eventListener : eventListeners) {
                 EventListener<T> listener = (EventListener<T>) eventListener;
-                CompletableFuture.runAsync(()-> listener.execute(eventType, data));
+                CompletableFuture.runAsync(() -> listener.execute(eventType, data));
             }
         }
     }
 
-
 }
-
-
